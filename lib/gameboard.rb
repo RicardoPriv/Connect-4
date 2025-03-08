@@ -1,3 +1,5 @@
+require "colorize"
+
 class Gameboard
   MAX_COLUMNS = 7
   MAX_ROWS = 6
@@ -92,7 +94,18 @@ class Gameboard
   def print_board
     board = get_board
     board.each do |row|
-      p row
+      print "\n-------------\n"
+      row.each do |element|
+        print "|"
+        if element.nil?
+          print " ".colorize(:color => :light_black) # Empty spaces
+        else
+          color = (element == :red) ? :red : :blue
+          print "o".colorize(color) # Red or Blue move
+        end
+      end
     end
+
+    print "\n-------------\n"
   end
 end

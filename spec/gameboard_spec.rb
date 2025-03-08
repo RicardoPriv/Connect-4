@@ -68,9 +68,6 @@ describe Gameboard do
       gameboard.insert_into_col(3, :blue)
       gameboard.insert_into_col(3, :red)
 
-
-      gameboard.print_board
-      p "---"
       expect(gameboard.winner?).to eql(:red)
     end
 
@@ -79,8 +76,6 @@ describe Gameboard do
       (0..6).each { |col| 3.times { gameboard.insert_into_col(col, :red) } }
       (0..6).each { |col| 3.times { gameboard.insert_into_col(col, :blue) } }
       
-      gameboard.print_board
-      p "---"
       expect(gameboard.full?).to eql(true)
     end
 
