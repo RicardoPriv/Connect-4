@@ -1,7 +1,7 @@
-require_relative "gameboard.rb"
+require_relative 'gameboard'
 
 module Gameplay
-  EXIT_CONDITION = "e".freeze
+  EXIT_CONDITION = 'e'.freeze
 
   def play
     gameboard = Gameboard.new
@@ -12,7 +12,7 @@ module Gameplay
       input = get_user_input
 
       if input == EXIT_CONDITION
-        puts "Exiting the game. Goodbye!"
+        puts 'Exiting the game. Goodbye!'
         break
       end
 
@@ -30,7 +30,7 @@ module Gameplay
           break
         end
 
-        current_player = (current_player == :red) ? :blue : :red
+        current_player = current_player == :red ? :blue : :red
       else
         puts "\nColumn is full, please try again."
       end
